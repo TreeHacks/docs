@@ -1,0 +1,44 @@
+site_name: TreeHacks Developer Documentation
+theme:
+  name: 'material'
+  # features:
+  #   - tabs
+  palette:
+    primary: black
+    accent: blue grey
+  logo: ./img/logo.svg
+  favicon: ./img/favicon.ico
+  font:
+    text: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, Arial, sans-serif
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+extra_css:
+  - main.css
+
+repo_name: TreeHacks/docs
+repo_url: https://github.com/TreeHacks/docs
+
+nav:
+  - Home: index.md
+  - Root:
+      Overview: root/overview.md
+      Theming: root/theming.md
+      Application Portal: root/application-portal.md
+      Admin Portal: root/admin-portal.md
+      Sponsor Portal: root/sponsor-portal.md
+  - Login: login.md
+  - Meet: meet.md
+  - Cog: cog.md
+  - Gavel: gavel.md
+  - Submit: submit.md
+  - DevOps:
+      DNS: devops/dns.md
+      AWS Inventory: devops/aws-inventory.md
+      Domain Inventory: devops/domain-inventory.md
+      Account Inventory: devops/account-inventory.md
+      Preparing for the Next Year: devops/next-year.md
