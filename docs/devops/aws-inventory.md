@@ -20,3 +20,8 @@ This is a list of all resources we have running on AWS. We should update this pa
 | ----------- | ----------- |
 | treehacks-uploads-dev | File uploads from root (dev) |
 | treehacks-uploads-prod | File uploads from root (prod) |
+
+## EC2 instances
+| Name      | Description |
+| ----------- | ----------- |
+| An instance in us-west-1 | TreeHacks wiki |
