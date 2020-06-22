@@ -1,6 +1,6 @@
 # TreeHacks docs
 
-TreeHacks developer documentation.
+TreeHacks developer documentation. Hosted at [https://docs.treehacks.com/](https://docs.treehacks.com/).
 
 Getting started
 
