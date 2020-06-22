@@ -5,7 +5,7 @@ You can also use this documentation to learn how to use your tools -- how to sta
 ## Running the docs locally
 
 ```bash
-git clone https://github.com/TheStanfordDaily/docs.git
+git clone https://github.com/TreeHacks/docs.git
 cd docs
 pip install -r requirements-docs.txt
 mkdocs serve
