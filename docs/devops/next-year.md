@@ -5,6 +5,7 @@ The general steps required for a new TreeHacks year are:
 - Reset data
 - Reconfigure root
 - Theme other sites
+- Renew Stanford SAML
 
 ## Change passwords
 
@@ -95,3 +96,7 @@ You must also change backend constants at [backend/constants.ts](https://github.
 ## Theme other sites
 
 Theme all of our other sites. This will involve copying and pasting some CSS, because we don't have a way to store multiple themes on our other sites other than root.
+
+## Updating SAML config
+
+Every year, you will need to update TreeHacks' SPDB SAML configuration so that Stanford sign-in keeps working. This configuration expires on September 18 every year. See [Login](../login.md) for more information on how to do this.
