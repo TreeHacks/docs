@@ -410,6 +410,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#page-rules" class="md-nav__link">
+    Page Rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warning-about-root-cname-records" class="md-nav__link">
+    Warning about root CNAME records
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -459,8 +473,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../next-year.md" title="Preparing for the Next Year" class="md-nav__link">
-      Preparing for the Next Year
+    <a href="../next-year/" title="Preparing for the next year" class="md-nav__link">
+      Preparing for the next year
     </a>
   </li>
 
@@ -500,6 +514,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#page-rules" class="md-nav__link">
+    Page Rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warning-about-root-cname-records" class="md-nav__link">
+    Warning about root CNAME records
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -522,9 +550,25 @@
                 
                   <h1>DNS</h1>
                 
-                <p>Our DNS records are handled by CloudFlare.</p>
+                <p>Our DNS records are handled by Cloudflare.</p>
 <h2 id="adding-a-new-record">Adding a new record<a class="headerlink" href="#adding-a-new-record" title="Permanent link">&para;</a></h2>
-<p>todo</p>
+<p>To add a new record, go to Cloudflare and add a record.</p>
+<p><img alt="cloudflare" src="../img/cloudflare.png" /></p>
+<h2 id="page-rules">Page Rules<a class="headerlink" href="#page-rules" title="Permanent link">&para;</a></h2>
+<p>We have some custom page rules set up on Cloudflare as well, which allow us to cache specific endpoints or create custom redirects.</p>
+<p>For example, we have a custom page rule used to cache the API endpoint to get the list of all hacks from Gavel, for performance reasons.</p>
+<h2 id="warning-about-root-cname-records">Warning about root CNAME records<a class="headerlink" href="#warning-about-root-cname-records" title="Permanent link">&para;</a></h2>
+<p>In the summer of 2018, we wanted <a href="https://treehacks.com">https://treehacks.com</a> to work properly (http:// and https://www. would work, but only https:// would give an error). We couldn't use Namecheap's default redirection service, because it wouldn't redirect https:// URLs. So, we tried adding a CNAME record at the root domain. However, this <a href="https://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root/">is a bad idea</a> and ended up breaking all email for most of the summer, until we noticed it and reverted the CNAME record change.</p>
+<p>We made a similar mistake in the summer of 2019. When switching from Namecheap to Cloudflare, we wanted to fix https://treehacks.com again, so we used Cloudflare's <a href="https://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root/">CNAME flattening feature</a> to add a CNAME record at the root again. However, we forgot that Namecheap had provided us with email forwarding services, so all emails stopped working. Again, we only noticed this a while later. When we realized this, we switched our treehacks.com email handling to G Suite.</p>
+<p>The lessons of this story are:</p>
+<ul>
+<li>
+<p>When you make a big change to DNS, make sure you test that emails work immediately instead of waiting several weeks until the damage is done.</p>
+</li>
+<li>
+<p><a href="https://www.cloudflare.com/features-page-rules/">Cloudflare Page Rules</a> are probably a safer / more reliable way of doing redirects than doing DNS record redirection (with Page Rules, you can redirect from an SSL path as well -- so we could have solved our problem of https://treehacks.com using them without touching DNS).</p>
+</li>
+</ul>
                 
               
               
