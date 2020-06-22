@@ -15,3 +15,11 @@ We have the following routing rules set up:
 - [everything else]@treehacks.com -> hello@treehacks.com
 
 These routing rules allow us to forward email to where it needs to go, without having to create multiple G Suite accounts for each email.
+
+## Forwarding of hello@treehacks.com
+
+We also forward email from hello@treehacks.com -> treehackscomhello@treehacks.freshdesk.com.
+
+However, this behavior is not configured through a routing rule as for the other emails above. Instead, it is just configured through Gmail's standard forwarding options:
+
+![gmail forwarding](img/gmail forwarding.png)
