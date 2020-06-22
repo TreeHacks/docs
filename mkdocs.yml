@@ -41,4 +41,5 @@ nav:
       AWS Inventory: devops/aws-inventory.md
       Domain Inventory: devops/domain-inventory.md
       Account Inventory: devops/account-inventory.md
+      G Suite: devops/g-suite.md
       Preparing for the next year: devops/next-year.md
