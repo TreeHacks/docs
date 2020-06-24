@@ -36,6 +36,7 @@ nav:
   - Cog: cog.md
   - Gavel: gavel.md
   - Submit: submit.md
+  - PiControl: picontrol.md
   - DevOps:
       DNS: devops/dns.md
       AWS Inventory: devops/aws-inventory.md
