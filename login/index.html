@@ -57,6 +57,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#access-control" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -287,9 +292,87 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Login
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Login" class="md-nav__link md-nav__link--active">
       Login
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    Access control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stanford-login" class="md-nav__link">
+    Stanford login
+  </a>
+  
+    <nav class="md-nav" aria-label="Stanford login">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spdb-configuration" class="md-nav__link">
+    SPDB configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renewing-spdb-config" class="md-nav__link">
+    Renewing SPDB config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-cognito-user-pool" class="md-nav__link">
+    Setting up a Cognito user pool
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up a Cognito user pool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-stanford-login-with-cognito" class="md-nav__link">
+    Setting up Stanford login with Cognito
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -451,6 +534,83 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    Access control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stanford-login" class="md-nav__link">
+    Stanford login
+  </a>
+  
+    <nav class="md-nav" aria-label="Stanford login">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spdb-configuration" class="md-nav__link">
+    SPDB configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renewing-spdb-config" class="md-nav__link">
+    Renewing SPDB config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-cognito-user-pool" class="md-nav__link">
+    Setting up a Cognito user pool
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up a Cognito user pool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-stanford-login-with-cognito" class="md-nav__link">
+    Setting up Stanford login with Cognito
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -466,7 +626,163 @@
                 
                   <h1>Login</h1>
                 
-                
+                <p>The login system is an SSO system that is used on all our sites. We use Cognito user pools for login, which allows people with non-@stanford.edu emails to create a username and password to sign in, while people with @stanford.edu emails can click "Log in with Stanford."</p>
+<h2 id="access-control">Access control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h2>
+<p>Access control is done by using <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html">Cognito groups</a>. We have the following groups:</p>
+<table>
+<thead>
+<tr>
+<th>Group Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin</td>
+<td>Access to everything, all application data (only a few people, codirectors, tech should have this role)</td>
+</tr>
+<tr>
+<td>reviewer</td>
+<td>Access to review all applications on root (generally the whole TreeHacks team should have this role)</td>
+</tr>
+<tr>
+<td>mentor</td>
+<td>Access to be a mentor on help.treehacks.com (all mentors, when signing up with the special mentor link, are assigned this role)</td>
+</tr>
+<tr>
+<td>sponsor</td>
+<td>Access to Sponsor Portal (all sponsors, when created, are assigned this role)</td>
+</tr>
+<tr>
+<td>judge</td>
+<td>Judge access to Root (no longer used, todo delete this)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stanford-login">Stanford login<a class="headerlink" href="#stanford-login" title="Permanent link">&para;</a></h2>
+<p>We use Stanford login, which integrates with our Cognito user pools. To do so, we have registered entries in SPDB, which is Stanford's database of which services are allowed to log in with Stanford.</p>
+<h3 id="spdb-configuration">SPDB configuration<a class="headerlink" href="#spdb-configuration" title="Permanent link">&para;</a></h3>
+<p>We have the following configs set up in SPDB:</p>
+<p><a href="https://spdb.stanford.edu/spconfigs/4720">urn:amazon:cognito:sp:us-east-1_dvGgSVQIh</a> - connects with the treehacks-prod Cognito user pool</p>
+<p><a href="https://spdb.stanford.edu/spconfigs/4622">urn:amazon:cognito:sp:us-east-1_zraMJaf9F</a> - connects with the treehacks-dev Cognito user pool</p>
+<h3 id="renewing-spdb-config">Renewing SPDB config<a class="headerlink" href="#renewing-spdb-config" title="Permanent link">&para;</a></h3>
+<p>Every year, sometime before September, you will receive an email that looks like the following:</p>
+<p><img alt="saml email" src="../img/saml%20email.png" /></p>
+<p>This means that you need to renew the SPDB configuration for both dev and prod. Please open a <a href="https://stanford.service-now.com/services/">ServiceNow Ticket</a> with Stanford with a message such as following:</p>
+<blockquote>
+<p>We would like to renew the following SPDB configs used for TreeHacks: https://spdb.stanford.edu/spconfigs/4720 and https://spdb.stanford.edu/spconfigs/4622.</p>
+</blockquote>
+<h2 id="setting-up-a-cognito-user-pool">Setting up a Cognito user pool<a class="headerlink" href="#setting-up-a-cognito-user-pool" title="Permanent link">&para;</a></h2>
+<p>Here are steps to follow if you are creating a new Cognito user pool from scratch for root. You may not need to do this regularly, as you can just reuse existing user pools each year, but these steps are documented in case they are needed:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These steps could also apply for integrating <em>any</em> Cognito user pool with Stanford login, for non-TreeHacks-specific applications.</p>
+</div>
+<ul>
+<li>
+<p>When the pool is created, make sure you create it with the "Email address or phone number" option (rather than "username" option).</p>
+</li>
+<li>
+<p>Note down the pool id of your user pool. Set the <code>COGNITO_USER_POOL_ID</code> environment variable on login.treehacks.com equal to this value.
+<img alt="pool id" src="../img/pool%20id.png" /></p>
+</li>
+<li>
+<p>Under "Message customizations", make sure that emails are sent through Amazon SES and "verification type" is set to "Code".
+<img alt="cognito ses" src="../img/cognito%20ses.png" /></p>
+</li>
+<li>
+<p>Create a new lambda function with the contents of <a href="https://github.com/TreeHacks/root/blob/master/util/conf_email_lambda.js">root/util/conf_email_lambda.js</a>. Make sure to set the <code>COGNITO_USER_POOL_ID</code> and <code>WEBSITE</code> environment variables of this lambda function. Then, go to "Triggers" and select this lambda function as the "Custom message" trigger.
+<img alt="cognito triggers" src="../img/cognito%20triggers.png" /></p>
+</li>
+<li>
+<p>Create a new app client. Make sure the settings are similar to the ones in the screenshot below. Note down the "app client id" value and set the <code>COGNITO_CLIENT_ID</code> environment variable on login.treehacks.com to be equal to this value.
+<img alt="cognito app client" src="../img/cognito%20app%20client.png" /></p>
+</li>
+<li>
+<p>Under "App client settings", make sure that both "Stanford" and "Cognito User Pool" are selected identity providers, and the below OAuth 2.0 settings are set. You also want to set the callback / sign out URLs as below. Include <code>localhost:9000</code> if you have a dev user pool; otherwise, don't include the localhost URL.
+<img alt="cognito app client settings" src="../img/cognito%20app%20client%20settings.png" /></p>
+</li>
+</ul>
+<h3 id="setting-up-stanford-login-with-cognito">Setting up Stanford login with Cognito<a class="headerlink" href="#setting-up-stanford-login-with-cognito" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Set a domain name for your user pool. Note this value down (in this case it's "https://treehacks-prod.auth.us-east-1.amazoncognito.com"). You should set the <code>COGNITO_ENDPOINT_URL</code> environment variable on login.treehacks.com to be equal to this value:
+<img alt="cognito domain name" src="../img/cognito%20domain%20name.png" /></p>
+</li>
+<li>
+<p>Create a new SAML identity provider named "Stanford". Set the value of the "Metadata" document to "https://idp.stanford.edu/metadata.xml" and click "Create provider".
+<img alt="stanford idp" src="../img/stanford%20idp.png" /></p>
+</li>
+<li>
+<p>Click "Show signing certificate" for the Stanford identity provider and save the contents of a textbox to a safe place.
+<img alt="signing certificate" src="../img/signing%20cert.png" /></p>
+</li>
+<li>
+<p>Go to "Attribute mapping" and map the SAML attribute "urn:oid:1.3.6.1.4.1.5923.1.1.1.6" to the user pool attributes "Name" and "Email". (That number comes from <a href="https://uit.stanford.edu/service/saml/arp">this link</a> -- it corresponds to <code>eduPersonPrincipalName</code>)
+<img alt="attribute mapping" src="../img/attribute%20mapping.png" /></p>
+</li>
+<li>
+<p>Now, we have to apply for an exception with Stanford because Cognito does not support encrypted SAML assertions. This involves (see <a href="https://uit.stanford.edu/service/saml/exception">this page</a> for Stanford's description of the exception process):</p>
+</li>
+<li>
+<p>Create a ServiceNow Ticket with language such as the following:</p>
+</li>
+</ul>
+<blockquote>
+<p>The entityID of the Service Provider - urn:amazon:cognito:sp:us-east-1_he6sIPQW9 (fill this in with the right entityID, replacing the "us-east-1_he6sIPQW9" part with the right user pool ID)</p>
+<p>Contact information for the Service Provider's technical support - [name], [email]</p>
+<p>Reason why the Service Provider cannot support encrypted responses - Amazon Cognito does not supported encrypted responses</p>
+<p>Number of people at Stanford who will be using application - thousands</p>
+<p>Purpose of the application - Stanford signin for TreeHacks applicants</p>
+<p>Name and email of the Service Provider's Stanford technical contact - [name], [email]</p>
+<p>Name and email of the manager of the Stanford team responsible for this application - [name], [email]</p>
+</blockquote>
+<ul>
+<li>Send an e-mail (ideally, it should be the TreeHacks faculty sponsor who sends the email, but you might also be able to send it) to saml-team@lists.stanford.edu agreeing to this text:</li>
+</ul>
+<blockquote>
+<p>We are aware that by not encrypting the Identity Provider's SAML response there is an increased risk both of exposing the response's data and future security issues exploiting the unencrypted response, and that we accept this increased risk.</p>
+</blockquote>
+<ul>
+<li>Create another <a href="https://stanford.service-now.com/services/">ServiceNow Ticket</a> with the following language:</li>
+</ul>
+<blockquote>
+<p>We'd like to integrate SAML login with an Amazon Cognito user pool for TreeHacks. Cognito does not support encrypted SAML assertions, so I would like to request an exception. I have already completed the steps outlined in https://uit.stanford.edu/service/saml/exception. I have attached the SAML metadata (metadata.xml) and signing certificate (cert.txt) for my SP. Could you please help upload this configuration to SPDB?</p>
+<p>Additionally, AWS Cognito user pools do not work with the default NameID parameter. Can you set the Subject to <sunetid>@stanford.edu change the configuration to release eduPersonPrincipalName as NameID?</p>
+</blockquote>
+<p>The following files should be attached to the above ticket:</p>
+<ul>
+<li>metadata.xml (make sure you change the <code>validUntil</code> attribute to a year from now, replace the last part of <code>entityID</code> with the user pool ID, replace <code>https://treehacks-prod.auth.us-east-1.amazoncognito.com</code> with your user pool's domain name, and replace the contact name / email addresses for technical and support contacts):</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>  <span class="nt">&lt;md:EntityDescriptor</span> <span class="na">xmlns:md=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:metadata&quot;</span> <span class="na">validUntil=</span><span class="s">&quot;2021-02-27T20:58:21Z&quot;</span> <span class="na">cacheDuration=</span><span class="s">&quot;PT604800S&quot;</span> <span class="na">entityID=</span><span class="s">&quot;urn:amazon:cognito:sp:us-east-1_OzykbuXao&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;md:SPSSODescriptor</span> <span class="na">AuthnRequestsSigned=</span><span class="s">&quot;false&quot;</span> <span class="na">WantAssertionsSigned=</span><span class="s">&quot;false&quot;</span> <span class="na">protocolSupportEnumeration=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:protocol&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;md:NameIDFormat&gt;</span>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified<span class="nt">&lt;/md:NameIDFormat&gt;</span>
+      <span class="nt">&lt;md:AssertionConsumerService</span> <span class="na">Binding=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&quot;</span> <span class="na">Location=</span><span class="s">&quot;https://treehacks-prod.auth.us-east-1.amazoncognito.com/saml2/idpresponse&quot;</span> <span class="na">index=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/md:SPSSODescriptor&gt;</span>
+    <span class="nt">&lt;md:ContactPerson</span> <span class="na">contactType=</span><span class="s">&quot;technical&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;md:GivenName&gt;</span>Ashwin Ramaswami<span class="nt">&lt;/md:GivenName&gt;</span>
+      <span class="nt">&lt;md:EmailAddress&gt;</span>xxx@stanford.edu<span class="nt">&lt;/md:EmailAddress&gt;</span>
+    <span class="nt">&lt;/md:ContactPerson&gt;</span>
+    <span class="nt">&lt;md:ContactPerson</span> <span class="na">contactType=</span><span class="s">&quot;support&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;md:GivenName&gt;</span>Ashwin Ramaswami<span class="nt">&lt;/md:GivenName&gt;</span>
+      <span class="nt">&lt;md:EmailAddress&gt;</span>xxx@stanford.edu<span class="nt">&lt;/md:EmailAddress&gt;</span>
+    <span class="nt">&lt;/md:ContactPerson&gt;</span>
+  <span class="nt">&lt;/md:EntityDescriptor&gt;</span>
+</code></pre></div>
+
+
+<ul>
+<li>
+<p>cert.txt (put the contents of the user pool signing certificate into this text file)</p>
+</li>
+<li>
+<p>Wait and see! Hopefully the Stanford support representative will help you through the process if there are any issues -- eventually, they will create a SPDB config entry and Stanford login should work.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might get an error when using Stanford login such as the following: <code>Error in SAML response processing: 1 validation error detected: Value 'stanford_.....' at 'userName' failed to satisfy constraint: Member must have length less than or equal to 128</code>. If this happens, please underscore the second point in the original support ticket (ask the representative to make sure they have set the Subject to <code>&lt;sunetid&gt;@stanford.edu</code> and released eduPersonPrincipalName as NameID).</p>
+</div>
                 
               
               
