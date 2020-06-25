@@ -37,7 +37,11 @@ The script is very simple: upon receiving input from the NFC reader (a card's ID
 
 We used a standard install of Raspbian. You will need to configure the Pi to connect to Wifi -- there are many guides online to do this, such as [this one](https://raspberrypihq.com/how-to-connect-your-raspberry-pi-to-wifi/).
 
-An installation of Python 3.7 should include all of the necessary dependencies except for [Requests](https://requests.readthedocs.io/en/master/). A 'pip3 install requests' should work, provided you're connected to the internet.
+An installation of Python 3.7 should include all of the necessary dependencies except for [Requests](https://requests.readthedocs.io/en/master/). SSH'ing into the Pi and running 'pip3 install requests' should work, provided you're connected to the internet.
+
+#### Changing the Pi's Password
+
+Since hackers are going to be connected to the same network as the Pis, they will be able to trivially gain root access to the Pis if the default password is kept. Run the 'passwd' command while SSH'ed into the Pi; you'll be prompted for the default password ("raspberry" is the default) and then you can set your own.
 
 ### Web App
 
@@ -63,7 +67,6 @@ PASSWORD=
 
 #### Development Set-up
 
-- Set "homepage" in package.json to the url you want.
 - Run `go get -u github.com/gin-gonic/gin github.com/joho/godotenv github.com/lib/pq`
 - Run `npm run dev-start`
 
